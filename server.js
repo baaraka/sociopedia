@@ -6,6 +6,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const userRoute = require("./routes/users.js");
 const authRoute = require("./routes/auth.js");
+const postRoute = require("./routes/posts.js");
 
 // dotenv configuration
 dotenv.config();
@@ -23,6 +24,7 @@ app.use(morgan("common"));
 
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/posts", postRoute);
 
 app.listen(5000, () => {
   console.log("The backend is listening and here we go!.");
